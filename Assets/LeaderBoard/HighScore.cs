@@ -80,6 +80,7 @@ public class HighScore : MonoBehaviour
     IEnumerator AddScore(string name, int score)
     {
         string hash = Md5Sum(name + score + privateKey);
+        //curious-craft.com/businesscard/AddScore.php?name=bH&score=69&hash=
         WWW ScorePost = new WWW(AddScoreURL + "name=" + WWW.EscapeURL(name) + "&score=" + score + "&hash=" + hash); //Post our score
         yield return ScorePost; // The function halts until the score is posted.
         if (ScorePost.error == null)
