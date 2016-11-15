@@ -9,7 +9,7 @@ public class HighScore : MonoBehaviour
 
     ///Fill in your server data here.
     private string privateKey = "Cur!ousCraftKey";
-    private string TopScoresURL = "http://curious-craft.com/businesscard/TopScores.php";
+    private string TopScoresURL = "http://curious-craft.com/businesscard/TopScores.php?";
 
     //Don't forget the question marks!
     private string AddScoreURL = "http://curious-craft.com/businesscard/AddScore.php?";
@@ -105,7 +105,7 @@ public class HighScore : MonoBehaviour
         {
             print("Grabbed rank apaz");
             //rank = 10;
-            //rank = int.Parse(RankGrabAttempt.text); // Assign the rank to our variable. We could also use a TryParse and write an error dialogue.
+            rank = int.Parse(RankGrabAttempt.text); // Assign the rank to our variable. We could also use a TryParse and write an error dialogue.
             StartCoroutine(GetTopScores()); // Get our top scores
         }
         else
